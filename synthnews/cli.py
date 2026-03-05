@@ -1,6 +1,8 @@
 import argparse
 import os
 
+from synthnews.logging import configure_logging
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -65,3 +67,9 @@ def parse_args() -> argparse.Namespace:
         help="Enable extra debug logging in the console. File logging is always verbose.",
     )
     return parser.parse_args()
+
+
+def main() -> None:
+
+    args = parse_args()
+    configure_logging(verbose=args.verbose)

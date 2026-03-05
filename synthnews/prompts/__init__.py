@@ -29,3 +29,11 @@ Requirements:
 - Avoid obviously impossible facts, magic, sci-fi, or satire.
 - Output only the requested JSON or article text, with no notes or disclaimers.
 """
+
+
+class TopicConfig:
+    def __init__(self, topic: str, angle: str, entities: list[str], style: str):
+        self.topic = topic
+        self.angle = angle
+        self.entities = entities
+        self.style = style
