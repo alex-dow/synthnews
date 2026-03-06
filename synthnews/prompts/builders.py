@@ -3,6 +3,14 @@ import random
 import os
 from datetime import datetime
 
+from synthnews.prompts import TOPICS
+
+
+def build_article_config(topic: str):
+    if topic not in TOPICS:
+        raise ValueError(f"Invalid topic: {topic}")
+    pass
+
 
 def build_plan_prompt(
     topic: str, config: Dict[str, List[str]], publication_dt: datetime

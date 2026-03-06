@@ -34,11 +34,21 @@ CMAKE_ARGS="-DGGML_CUDA=on" pip install -r requirements.txt
 - Compare the article to the entire corpus to see how similar the article is
 - Skip the article it's too short or not diverse enough
 
-## Why
+## Article Planning
 
-LLMs are probalistic and expensive. But getting data to train a deterministic NLP model can be long.
+Each news topic has a list of relevant entities, angles, focuses, questions, and other hints that are used to create a plan for generating an article. 
 
-So why not generate the data we need?
+There is also a list of article writing styles.
+
+Each entity, angle, style, etc, are picked randomly to finally create a plan for creating the article.
+
+
+
+
+
+
+
+
 
 
 

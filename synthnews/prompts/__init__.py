@@ -1,3 +1,6 @@
+from typing import TypedDict
+
+
 TOPICS = [
     "crime_and_law",
     "economy_and_business",
@@ -16,6 +19,7 @@ ARTICLE_STYLES = [
     "city desk report",
     "international desk report",
     "sports desk gamer",
+    "investigative journalism",
 ]
 
 SYSTEM_PROMPT = """You write synthetic news-style articles for internal testing.
@@ -29,6 +33,28 @@ Requirements:
 - Avoid obviously impossible facts, magic, sci-fi, or satire.
 - Output only the requested JSON or article text, with no notes or disclaimers.
 """
+
+
+class Angle(TypedDict):
+    id: str
+    category: str
+    angle: str
+    focus: str
+    questions: list[str]
+
+
+class Entity(TypedDict):
+    name: str
+    entity_type: str
+    country_or_region: str
+    notes: str
+
+
+class ArticleConfig(TypedDict):
+    topic: str
+    headline: str
+    entities: list[Entity]
+    style: str
 
 
 class TopicConfig:
