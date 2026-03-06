@@ -1,4 +1,4 @@
-from synthnews.prompts import Angle
+from synthnews.prompts.angles import Angle
 
 
 ANGLES: list[Angle] = [

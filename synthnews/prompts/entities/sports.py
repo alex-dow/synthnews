@@ -1,4 +1,4 @@
-from synthnews.prompts import Entity
+from synthnews.prompts.entities import Entity
 
 
 ENTITIES: list[Entity] = [

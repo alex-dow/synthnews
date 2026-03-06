@@ -1,4 +1,26 @@
 from typing import TypedDict
+from synthnews.prompts.angles.crime_and_law import ANGLES as CRIME_AND_LAW_ANGLES
+from synthnews.prompts.angles.economy_and_business import (
+    ANGLES as ECONOMY_AND_BUSINESS_ANGLES,
+)
+from synthnews.prompts.angles.entertainment import ANGLES as ENTERTAINMENT_ANGLES
+from synthnews.prompts.angles.politics import ANGLES as POLITICS_ANGLES
+from synthnews.prompts.angles.science_and_technology import (
+    ANGLES as SCIENCE_AND_TECHNOLOGY_ANGLES,
+)
+from synthnews.prompts.angles.sports import ANGLES as SPORTS_ANGLES
+
+from synthnews.prompts.entities import Entity
+from synthnews.prompts.entities.crime_and_law import ENTITIES as CRIME_AND_LAW_ENTITIES
+from synthnews.prompts.entities.economy_and_business import (
+    ENTITIES as ECONOMY_AND_BUSINESS_ENTITIES,
+)
+from synthnews.prompts.entities.entertainment import ENTITIES as ENTERTAINMENT_ENTITIES
+from synthnews.prompts.entities.politics import ENTITIES as POLITICS_ENTITIES
+from synthnews.prompts.entities.science_and_technology import (
+    ENTITIES as SCIENCE_AND_TECHNOLOGY_ENTITIES,
+)
+from synthnews.prompts.entities.sports import ENTITIES as SPORTS_ENTITIES
 
 
 TOPICS = [
@@ -22,6 +44,24 @@ ARTICLE_STYLES = [
     "investigative journalism",
 ]
 
+ANGLES = {
+    "crime_and_law": CRIME_AND_LAW_ANGLES,
+    "economy_and_business": ECONOMY_AND_BUSINESS_ANGLES,
+    "entertainment": ENTERTAINMENT_ANGLES,
+    "politics": POLITICS_ANGLES,
+    "science_and_technology": SCIENCE_AND_TECHNOLOGY_ANGLES,
+    "sports": SPORTS_ANGLES,
+}
+
+ENTITIES = {
+    "crime_and_law": CRIME_AND_LAW_ENTITIES,
+    "economy_and_business": ECONOMY_AND_BUSINESS_ENTITIES,
+    "entertainment": ENTERTAINMENT_ENTITIES,
+    "politics": POLITICS_ENTITIES,
+    "science_and_technology": SCIENCE_AND_TECHNOLOGY_ENTITIES,
+    "sports": SPORTS_ENTITIES,
+}
+
 SYSTEM_PROMPT = """You write synthetic news-style articles for internal testing.
 Requirements:
 - Write in a neutral, professional news tone.
@@ -33,21 +73,6 @@ Requirements:
 - Avoid obviously impossible facts, magic, sci-fi, or satire.
 - Output only the requested JSON or article text, with no notes or disclaimers.
 """
-
-
-class Angle(TypedDict):
-    id: str
-    category: str
-    angle: str
-    focus: str
-    questions: list[str]
-
-
-class Entity(TypedDict):
-    name: str
-    entity_type: str
-    country_or_region: str
-    notes: str
 
 
 class ArticleConfig(TypedDict):
