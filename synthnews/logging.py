@@ -20,8 +20,10 @@ _LOG_COLORS = {
 }
 
 
-def configure_logging(log_file: Path | None, verbose: bool) -> None:
+def configure_logging(log_file: str | None = None, verbose: bool = False) -> None:
     """Configure the synth_news logger: colored console and optional plain file."""
+    if log_file is not None:
+        log_file = Path(log_file)
     LOGGER.setLevel(logging.DEBUG)
     LOGGER.handlers.clear()
     LOGGER.propagate = False
